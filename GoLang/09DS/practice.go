@@ -8,7 +8,7 @@ type Product struct {
 	price int
 }
 
-func main() {
+func practice() {
 
 	// 1
 	var hobbies [3]string = [3]string{"Gaming", "Anime", "Coding"}

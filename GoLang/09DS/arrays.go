@@ -4,13 +4,14 @@ import (
 	"fmt"
 )
 
-func mai() {
+func man() {
 
 	// arrays in go
 	prices := [4]int{23, 34, 12, 54}
 	fmt.Println(prices)
 
 	var days [7]string = [7]string{"Monday", "Tuesday", "Wednesday"}
+	// var days []string = []string{"Monday", "Tuesday", "Wednesday"}
 
 	fmt.Println(days[0])
 	days[3] = "Thursday"
@@ -36,10 +37,18 @@ func mai() {
 	bigArray := append(days[0:4], "Friday")
 	fmt.Println(bigArray)
 
+	// we can append another array to array by spread operator i.e. ...
+	var allDays []string = []string{"Monday", "Tuesday", "Wednesday"}
+	remDays := []string{"Thursday", "Friday", "Saturday", "Sunday"}
+	allDays = append(allDays, remDays...)
+	fmt.Println(allDays)
+
 	// dynamic arrays in go can be created by slices
 	var months []string = []string{"Jan", "Feb", "Mar"}
 	fmt.Println(months)
 	months = append(months, "Apr")
 	fmt.Println(months)
+
+	// practice()
 
 }
