@@ -5,6 +5,13 @@ import (
 	"fmt"
 )
 
+// loops in go
+// 1. for i:=0;i<count;i++{}
+// 2. for condition {}
+// 3. for index, value := ramge array {}
+
+// we can use continue and break inside loops
+
 func main() {
 	userChoice, err := getUserChoice()
 	if err != nil {
@@ -35,7 +42,7 @@ func sumUptoX() {
 		sum += i
 	}
 
-	fmt.Println(sum)
+	fmt.Printf("S`um of numbers upto %v is %v", num, sum)
 }
 
 func factorialUptoX() {
@@ -49,10 +56,28 @@ func factorialUptoX() {
 		factorial *= i
 	}
 
-	fmt.Println(factorial)
+	fmt.Printf("%v! : %v", num, factorial)
 }
 
-func sumAllNumbers() {}
+func sumAllNumbers() {
+
+	isWantInput := true
+	sum := 0
+
+	// no while loop in GO
+	// this way for loop can be used as while
+	for isWantInput {
+		num, err := getInputNo("Enter the number or press any alphabet to Exit: ")
+		// if err != nil {
+		// 	isWantInput = false
+		// }
+		// when error will be true we will set isWant input false so !(err!=nil)
+		isWantInput = err == nil
+		sum += num
+	}
+
+	fmt.Printf("Sum is %v", sum)
+}
 
 func sumNumbersInList() {
 
@@ -67,6 +92,8 @@ func sumNumbersInList() {
 		num, err := getInputNo("")
 		if err != nil {
 			fmt.Println("Invalid number input.")
+			// to ignore incorrect input
+			// continue
 		}
 		arr = append(arr, num)
 	}
