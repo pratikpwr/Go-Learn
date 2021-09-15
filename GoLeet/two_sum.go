@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// correct ans
 func twoSum(nums []int, target int) []int {
 
 	var ans []int

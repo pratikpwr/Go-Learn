@@ -3,6 +3,7 @@
 
 // using namespace std;
 
+// correct ans
 // int removeElement(vector<int> &nums, int val)
 // {
 //     int size = nums.size();
